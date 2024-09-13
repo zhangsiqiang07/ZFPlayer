@@ -45,7 +45,7 @@ Pod::Spec.new do |s|
         ijkplayer.source_files = 'ZFPlayer/Classes/ijkplayer/*.{h,m}'
         ijkplayer.public_header_files = 'ZFPlayer/Classes/ijkplayer/*.h'
         ijkplayer.dependency 'ZFPlayer/Core'
-        ijkplayer.dependency 'IJKMediaFramework'
+        ijkplayer.dependency 'BIJKPlayer'
     end
     
 end
