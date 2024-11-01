@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     s.author           = { 'renzifeng' => 'zifeng1300@gmail.com' }
     s.source           = { :git => 'https://github.com/renzifeng/ZFPlayer.git', :tag => s.version.to_s }
     s.social_media_url = 'http://weibo.com/zifeng1300'
-    s.ios.deployment_target = '8.0'
+    s.ios.deployment_target = '13.0'
     s.requires_arc = true
     s.static_framework = true
     s.default_subspec = 'Core'
@@ -45,7 +45,12 @@ Pod::Spec.new do |s|
         ijkplayer.source_files = 'ZFPlayer/Classes/ijkplayer/*.{h,m}'
         ijkplayer.public_header_files = 'ZFPlayer/Classes/ijkplayer/*.h'
         ijkplayer.dependency 'ZFPlayer/Core'
-        ijkplayer.dependency 'BIJKPlayer', '~> 0.7.16'
+        ijkplayer.dependency 'IJKMediaFramework'
     end
-    
+    s.subspec 'aliplayer' do |aliplayer|
+        aliplayer.source_files = 'ZFPlayer/Classes/aliplayer/*.{h,m}'
+        aliplayer.public_header_files = 'ZFPlayer/Classes/aliplayer/*.h'
+        aliplayer.dependency 'ZFPlayer/Core'
+        aliplayer.dependency 'AliPlayerSDK_iOS', '~> 6.17.0'
+    end
 end
