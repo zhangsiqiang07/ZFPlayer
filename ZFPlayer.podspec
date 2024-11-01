@@ -51,6 +51,5 @@ Pod::Spec.new do |s|
         aliplayer.source_files = 'ZFPlayer/Classes/aliplayer/*.{h,m}'
         aliplayer.public_header_files = 'ZFPlayer/Classes/aliplayer/*.h'
         aliplayer.dependency 'ZFPlayer/Core'
-        aliplayer.dependency 'AliPlayerSDK_iOS', '~> 6.17.0'
     end
 end

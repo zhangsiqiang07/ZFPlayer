@@ -29,14 +29,9 @@
 #import "ZFPlayerMediaPlayback.h"
 #endif
 
-#if __has_include(<AliyunPlayer/AliPlayer.h>)
-#import <AliyunPlayer/AliPlayer.h>
-
 
 @interface ZFAliPlayerManager : NSObject <ZFPlayerMediaPlayback>
 
 
 
 @end
-
-#endif
