@@ -30,7 +30,8 @@
 #import "ZFPlayer.h"
 #import "ZFPlayerConst.h"
 #endif
-#if __has_include(<IJKMediaFramework/IJKMediaFramework.h>)
+#if __has_include(<AliyunPlayer/AliPrivateService.h>)
+#import <AliyunPlayer/AliPrivateService.h>
 
 @interface ZFAliPlayerManager ()<AVPDelegate>
 
@@ -76,6 +77,7 @@
     if (self) {
         _scalingMode = ZFPlayerScalingModeAspectFit;
         _shouldAutoPlay = YES;
+        [self initializePlayer];
     }
     return self;
 }
@@ -83,7 +85,6 @@
 - (void)prepareToPlay {
     if (!_assetURL) return;
     _isPreparedToPlay = YES;
-    [self initializePlayer];
     if (self.shouldAutoPlay) {
         [self play];
     }
@@ -140,6 +141,8 @@
 
 - (void)initializePlayer {
 
+    [AliPrivateService initLicenseService];
+    
     self.player = [[AliPlayer alloc] init];
     self.player.delegate = self;
     self.player.autoPlay = self.shouldAutoPlay;
